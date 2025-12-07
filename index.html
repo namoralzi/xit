@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foco PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e60">
+</head>
+<body>
+    <div class="container">
+        <h1>Modo Foco</h1>
+        <div id="timer">25:00</div>
+        <button id="startBtn">Iniciar</button>
+        <button id="resetBtn">Resetar</button>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Registro do Service Worker (Necessário para PWA)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+            .then(() => console.log("Service Worker Registrado!"));
+        }
+    </script>
+</body>
+</html>
